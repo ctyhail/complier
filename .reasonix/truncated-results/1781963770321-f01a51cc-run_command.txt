@@ -1,0 +1,563 @@
+$ gcc -Wall -Wextra -std=gnu99 -finput-charset=UTF-8 -I. -c src/lexical_analyzer.c -o src/lexical_analyzer.o 2>&1
+[exit 1]
+src/lexical_analyzer.c:4:40: warning: "/*" within comment [-Wcomment]
+  *       自动跳过空白和注释（/* */ 和 //）
+                                         
+src/lexical_analyzer.c:4:46: error: stray '\345' in program
+  *       自动跳过空白和注释（/* */ 和 //）
+                                              ^
+src/lexical_analyzer.c:4:47: error: stray '\222' in program
+  *       自动跳过空白和注释（/* */ 和 //）
+                                               ^
+src/lexical_analyzer.c:4:48: error: stray '\214' in program
+  *       自动跳过空白和注释（/* */ 和 //）
+                                                ^
+src/lexical_analyzer.c:5:10: error: stray '\351' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+          ^
+src/lexical_analyzer.c:5:11: error: stray '\224' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+           ^
+src/lexical_analyzer.c:5:12: error: stray '\231' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+            ^
+src/lexical_analyzer.c:5:13: error: stray '\350' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+             ^
+src/lexical_analyzer.c:5:14: error: stray '\257' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+              ^
+src/lexical_analyzer.c:5:15: error: stray '\257' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+               ^
+src/lexical_analyzer.c:5:16: error: stray '\345' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                ^
+src/lexical_analyzer.c:5:17: error: stray '\244' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                 ^
+src/lexical_analyzer.c:5:18: error: stray '\204' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                  ^
+src/lexical_analyzer.c:5:19: error: stray '\347' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                   ^
+src/lexical_analyzer.c:5:20: error: stray '\220' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                    ^
+src/lexical_analyzer.c:5:21: error: stray '\206' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                     ^
+src/lexical_analyzer.c:5:22: error: stray '\357' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                      ^
+src/lexical_analyzer.c:5:23: error: stray '\274' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                       ^
+src/lexical_analyzer.c:5:24: error: stray '\210' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                        ^
+src/lexical_analyzer.c:5:25: error: stray '\351' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                         ^
+src/lexical_analyzer.c:5:26: error: stray '\235' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                          ^
+src/lexical_analyzer.c:5:27: error: stray '\236' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                           ^
+src/lexical_analyzer.c:5:28: error: stray '\346' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                            ^
+src/lexical_analyzer.c:5:29: error: stray '\263' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                             ^
+src/lexical_analyzer.c:5:30: error: stray '\225' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                              ^
+src/lexical_analyzer.c:5:31: error: stray '\345' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                               ^
+src/lexical_analyzer.c:5:32: error: stray '\255' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                ^
+src/lexical_analyzer.c:5:33: error: stray '\227' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                 ^
+src/lexical_analyzer.c:5:34: error: stray '\347' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                  ^
+src/lexical_analyzer.c:5:35: error: stray '\254' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                   ^
+src/lexical_analyzer.c:5:36: error: stray '\246' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                    ^
+src/lexical_analyzer.c:5:37: error: stray '\343' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                     ^
+src/lexical_analyzer.c:5:38: error: stray '\200' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                      ^
+src/lexical_analyzer.c:5:39: error: stray '\201' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                       ^
+src/lexical_analyzer.c:5:40: error: stray '\351' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                        ^
+src/lexical_analyzer.c:5:41: error: stray '\235' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                         ^
+src/lexical_analyzer.c:5:42: error: stray '\236' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                          ^
+src/lexical_analyzer.c:5:43: error: stray '\346' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                           ^
+src/lexical_analyzer.c:5:44: error: stray '\263' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                            ^
+src/lexical_analyzer.c:5:45: error: stray '\225' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                             ^
+src/lexical_analyzer.c:5:46: error: stray '\345' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                              ^
+src/lexical_analyzer.c:5:47: error: stray '\215' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                               ^
+src/lexical_analyzer.c:5:48: error: stray '\225' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                ^
+src/lexical_analyzer.c:5:49: error: stray '\350' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                 ^
+src/lexical_analyzer.c:5:50: error: stray '\257' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                  ^
+src/lexical_analyzer.c:5:51: error: stray '\215' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                   ^
+src/lexical_analyzer.c:5:52: error: stray '\343' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                    ^
+src/lexical_analyzer.c:5:53: error: stray '\200' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                     ^
+src/lexical_analyzer.c:5:54: error: stray '\201' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                      ^
+src/lexical_analyzer.c:5:55: error: stray '\351' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                       ^
+src/lexical_analyzer.c:5:56: error: stray '\225' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                        ^
+src/lexical_analyzer.c:5:57: error: stray '\277' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                         ^
+src/lexical_analyzer.c:5:58: error: stray '\345' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                          ^
+src/lexical_analyzer.c:5:59: error: stray '\272' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                           ^
+src/lexical_analyzer.c:5:60: error: stray '\246' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                            ^
+src/lexical_analyzer.c:5:61: error: stray '\350' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                             ^
+src/lexical_analyzer.c:5:62: error: stray '\266' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                              ^
+src/lexical_analyzer.c:5:63: error: stray '\212' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                               ^
+src/lexical_analyzer.c:5:64: error: stray '\347' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                                ^
+src/lexical_analyzer.c:5:65: error: stray '\225' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                                 ^
+src/lexical_analyzer.c:5:66: error: stray '\214' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                                  ^
+src/lexical_analyzer.c:5:67: error: stray '\357' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                                   ^
+src/lexical_analyzer.c:5:68: error: stray '\274' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                                    ^
+src/lexical_analyzer.c:5:69: error: stray '\211' in program
+  *       错误处理（非法字符、非法单词、长度越界）
+                                                                     ^
+src/lexical_analyzer.c:6:4: error: stray '\345' in program
+  * 原理：基于手工实现的DFA进行词法分析
+    ^
+src/lexical_analyzer.c:6:5: error: stray '\216' in program
+  * 原理：基于手工实现的DFA进行词法分析
+     ^
+src/lexical_analyzer.c:6:6: error: stray '\237' in program
+  * 原理：基于手工实现的DFA进行词法分析
+      ^
+src/lexical_analyzer.c:6:7: error: stray '\347' in program
+  * 原理：基于手工实现的DFA进行词法分析
+       ^
+src/lexical_analyzer.c:6:8: error: stray '\220' in program
+  * 原理：基于手工实现的DFA进行词法分析
+        ^
+src/lexical_analyzer.c:6:9: error: stray '\206' in program
+  * 原理：基于手工实现的DFA进行词法分析
+         ^
+src/lexical_analyzer.c:6:10: error: stray '\357' in program
+  * 原理：基于手工实现的DFA进行词法分析
+          ^
+src/lexical_analyzer.c:6:11: error: stray '\274' in program
+  * 原理：基于手工实现的DFA进行词法分析
+           ^
+src/lexical_analyzer.c:6:12: error: stray '\232' in program
+  * 原理：基于手工实现的DFA进行词法分析
+            ^
+src/lexical_analyzer.c:6:13: error: stray '\345' in program
+  * 原理：基于手工实现的DFA进行词法分析
+             ^
+src/lexical_analyzer.c:6:14: error: stray '\237' in program
+  * 原理：基于手工实现的DFA进行词法分析
+              ^
+src/lexical_analyzer.c:6:15: error: stray '\272' in program
+  * 原理：基于手工实现的DFA进行词法分析
+               ^
+src/lexical_analyzer.c:6:16: error: stray '\344' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                ^
+src/lexical_analyzer.c:6:17: error: stray '\272' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                 ^
+src/lexical_analyzer.c:6:18: error: stray '\216' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                  ^
+src/lexical_analyzer.c:6:19: error: stray '\346' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                   ^
+src/lexical_analyzer.c:6:20: error: stray '\211' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                    ^
+src/lexical_analyzer.c:6:21: error: stray '\213' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                     ^
+src/lexical_analyzer.c:6:22: error: stray '\345' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                      ^
+src/lexical_analyzer.c:6:23: error: stray '\267' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                       ^
+src/lexical_analyzer.c:6:24: error: stray '\245' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                        ^
+src/lexical_analyzer.c:6:25: error: stray '\345' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                         ^
+src/lexical_analyzer.c:6:26: error: stray '\256' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                          ^
+src/lexical_analyzer.c:6:27: error: stray '\236' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                           ^
+src/lexical_analyzer.c:6:28: error: stray '\347' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                            ^
+src/lexical_analyzer.c:6:29: error: stray '\216' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                             ^
+src/lexical_analyzer.c:6:30: error: stray '\260' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                              ^
+src/lexical_analyzer.c:6:31: error: stray '\347' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                               ^
+src/lexical_analyzer.c:6:32: error: stray '\232' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                ^
+src/lexical_analyzer.c:6:33: error: stray '\204' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                 ^
+src/lexical_analyzer.c:6:37: error: stray '\350' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                     ^
+src/lexical_analyzer.c:6:38: error: stray '\277' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                      ^
+src/lexical_analyzer.c:6:39: error: stray '\233' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                       ^
+src/lexical_analyzer.c:6:40: error: stray '\350' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                        ^
+src/lexical_analyzer.c:6:41: error: stray '\241' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                         ^
+src/lexical_analyzer.c:6:42: error: stray '\214' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                          ^
+src/lexical_analyzer.c:6:43: error: stray '\350' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                           ^
+src/lexical_analyzer.c:6:44: error: stray '\257' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                            ^
+src/lexical_analyzer.c:6:45: error: stray '\215' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                             ^
+src/lexical_analyzer.c:6:46: error: stray '\346' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                              ^
+src/lexical_analyzer.c:6:47: error: stray '\263' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                               ^
+src/lexical_analyzer.c:6:48: error: stray '\225' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                                ^
+src/lexical_analyzer.c:6:49: error: stray '\345' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                                 ^
+src/lexical_analyzer.c:6:50: error: stray '\210' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                                  ^
+src/lexical_analyzer.c:6:51: error: stray '\206' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                                   ^
+src/lexical_analyzer.c:6:52: error: stray '\346' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                                    ^
+src/lexical_analyzer.c:6:53: error: stray '\236' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                                     ^
+src/lexical_analyzer.c:6:54: error: stray '\220' in program
+  * 原理：基于手工实现的DFA进行词法分析
+                                                      ^
+src/lexical_analyzer.c:7:2: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token
+  */
+  ^
+In file included from src/common.h:9:0,
+                 from src/lexical_analyzer.c:9:
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:295:71: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int    setvbuf (FILE *, char *, int, size_t);
+                                                                       ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:345:54: error: unknown type name 'size_t'
+ extern int __mingw_stdio_redirect__(snprintf)(char*, size_t, const char*, ...);
+                                                      ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:349:55: error: unknown type name 'size_t'
+ extern int __mingw_stdio_redirect__(vsnprintf)(char*, size_t, const char*, __VALIST);
+                                                       ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:490:57: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int _snprintf (char *, size_t, const char *, ...);
+                                                         ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:491:58: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int _vsnprintf (char *, size_t, const char *, __VALIST);
+                                                          ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:502:23: error: unknown type name 'size_t'
+ int snprintf (char *, size_t, const char *, ...);
+                       ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:505:24: error: unknown type name 'size_t'
+ int vsnprintf (char *, size_t, const char *, __VALIST);
+                        ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:647:33: error: unknown type name 'size_t'
+ getdelim (char ** __restrict__, size_t * __restrict__, int, FILE * __restrict__);
+                                 ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:650:32: error: unknown type name 'size_t'
+ getline (char ** __restrict__, size_t * __restrict__, FILE * __restrict__);
+                                ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:734:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t fread (void *, size_t, size_t, FILE *);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:734:56: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t fread (void *, size_t, size_t, FILE *);
+                                                        ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:734:64: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t fread (void *, size_t, size_t, FILE *);
+                                                                ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:735:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t fwrite (const void *, size_t, size_t, FILE *);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:735:63: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t fwrite (const void *, size_t, size_t, FILE *);
+                                                               ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:735:71: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t fwrite (const void *, size_t, size_t, FILE *);
+                                                                       ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:962:64: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int    _snwprintf (wchar_t *, size_t, const wchar_t *, ...);
+                                                                ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:964:65: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int    _vsnwprintf (wchar_t *, size_t, const wchar_t *, __VALIST);
+                                                                 ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:1006:52: error: unknown type name 'size_t'
+ __cdecl __MINGW_NOTHROW  int snwprintf (wchar_t *, size_t, const wchar_t *, ...);
+                                                    ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdio.h:1007:53: error: unknown type name 'size_t'
+ __cdecl __MINGW_NOTHROW  int vsnwprintf (wchar_t *, size_t, const wchar_t *, __VALIST);
+                                                     ^~~~~~
+In file included from src/common.h:10:0,
+                 from src/lexical_analyzer.c:9:
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:468:50: error: unknown type name 'size_t'
+ wchar_t *_wfullpath (wchar_t *, const wchar_t *, size_t);
+                                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:474:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t wcstombs (char *, const wchar_t *, size_t);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:474:76: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t wcstombs (char *, const wchar_t *, size_t);
+                                                                            ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:477:59: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int mblen (const char *, size_t);
+                                                           ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:478:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t mbstowcs (wchar_t *, const char *, size_t);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:478:76: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t mbstowcs (wchar_t *, const char *, size_t);
+                                                                            ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:479:71: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int mbtowc (wchar_t *, const char *, size_t);
+                                                                       ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:486:57: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                                         ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:504:30: error: unknown type name 'size_t'
+ (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+                              ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:504:38: error: unknown type name 'size_t'
+ (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+                                      ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:507:10: error: unknown type name 'size_t'
+ (void *, size_t, size_t, int (*)(const void *, const void *));
+          ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:507:18: error: unknown type name 'size_t'
+ (void *, size_t, size_t, int (*)(const void *, const void *));
+                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\stdlib.h:569:71: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *_fullpath (char*, const char*, size_t);
+                                                                       ^~~~~~
+In file included from e:\byks\win_flex_bison-latest\mingw\include\string.h:62:0,
+                 from src/common.h:11,
+                 from src/lexical_analyzer.c:9:
+e:\byks\win_flex_bison-latest\mingw\include\strings.h:64:70: error: unknown type name 'size_t'
+ int __cdecl __MINGW_NOTHROW strncasecmp( const char *, const char *, size_t );
+                                                                      ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\strings.h:81:77: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int _strnicmp( const char *, const char *, size_t );
+                                                                             ^~~~~~
+In file included from src/common.h:11:0,
+                 from src/lexical_analyzer.c:9:
+e:\byks\win_flex_bison-latest\mingw\include\string.h:70:67: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *memchr (const void *, int, size_t) __MINGW_ATTRIB_PURE;
+                                                                   ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:71:74: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int memcmp (const void *, const void *, size_t) __MINGW_ATTRIB_PURE;
+                                                                          ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:72:70: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *memcpy (void *, const void *, size_t);
+                                                                      ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:73:71: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *memmove (void *, const void *, size_t);
+                                                                       ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:74:61: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *memset (void *, int, size_t);
+                                                             ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:80:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strcspn (const char *, const char *) __MINGW_ATTRIB_PURE;
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:83:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:84:71: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strncat (char *, const char *, size_t);
+                                                                       ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:85:75: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int strncmp (const char *, const char *, size_t) __MINGW_ATTRIB_PURE;
+                                                                           ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:86:71: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strncpy (char *, const char *, size_t);
+                                                                       ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:89:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strspn (const char *, const char *) __MINGW_ATTRIB_PURE;
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:92:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strxfrm (char *, const char *, size_t);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:92:72: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strxfrm (char *, const char *, size_t);
+                                                                        ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:98:77: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *_memccpy (void *, const void *, int, size_t);
+                                                                             ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:99:76: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int _memicmp (const void *, const void *, size_t);
+                                                                            ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:104:63: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *_strnset (char *, int, size_t);
+                                                               ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:108:68: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void _swab (const char *, char *, size_t);
+                                                                    ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:126:76: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int _strncoll(const char *, const char *, size_t);
+                                                                            ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:127:77: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int _strnicoll(const char *, const char *, size_t);
+                                                                             ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:134:76: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *memccpy (void *, const void *, int, size_t);
+                                                                            ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:135:75: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int memicmp (const void *, const void *, size_t);
+                                                                           ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:141:76: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int strnicmp (const char *, const char *, size_t);
+                                                                            ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:142:62: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strnset (char *, int, size_t);
+                                                              ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\string.h:151:67: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void swab (const char *, char *, size_t);
+                                                                   ^~~~~~
+In file included from e:\byks\win_flex_bison-latest\mingw\include\string.h:170:0,
+                 from src/common.h:11,
+                 from src/lexical_analyzer.c:9:
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:397:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t wcscspn (const wchar_t *, const wchar_t *);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:398:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t wcslen (const wchar_t *);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:399:80: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *wcsncat (wchar_t *, const wchar_t *, size_t);
+                                                                                ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:400:81: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int wcsncmp (const wchar_t *, const wchar_t *, size_t);
+                                                                                 ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:401:80: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *wcsncpy (wchar_t *, const wchar_t *, size_t);
+                                                                                ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:404:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t wcsspn (const wchar_t *, const wchar_t *);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:407:34: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t wcsxfrm (wchar_t *, const wchar_t *, size_t);
+                                  ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:407:78: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t wcsxfrm (wchar_t *, const wchar_t *, size_t);
+                                                                              ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:416:83: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int _wcsnicmp (const wchar_t *, const wchar_t *, size_t);
+                                                                                   ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:417:73: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  wchar_t *_wcsnset (wchar_t *, wchar_t, size_t);
+                                                                         ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\include\wchar.h:423:83: error: unknown type name 'size_t'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int _wcsncoll (const wchar_t *, const wchar_t *, size_t);
+                                                                                   ^~~~~~
+e:\byks\win_flex_bison-latest\mingw\in
+
+[… truncated 5664 chars …]
