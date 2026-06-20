@@ -359,6 +359,6 @@ bool Parser::parse() {
 
 void Parser::printErrors() const {
     for (const auto& err : errors) {
-        std::cout << "(语法错误,行号:" << err.line << ")" << std::endl;
+        std::cout << "(Syntax error, line:" << err.line << ")" << std::endl;
     }
 }
