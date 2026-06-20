@@ -15,8 +15,11 @@ std::string tokenTypeToString(TokenType type) {
 int main() {
     std::string testCode = 
         "var abc, 123abcX;\n"
-        "/* multi-line \n comment */\n"
-        "abc := 100 + @;\n";
+        "/* This is a \n"
+        "   multi-line comment */\n"
+        "abc := 100 + @;\n"
+        "// this is a single line comment\n"
+        "this_is_a_very_long_variable_name := 999999999;\n";
 
     Lexer lexer(testCode);
     Token t;
