@@ -67,16 +67,17 @@ Token Lexer::getNextToken() {
             while (isalnum(peek()) || peek() == '_') {
                 lexeme += advance();
             }
-            
-            // 错误检查：长度超过 8 位
+
+            // Check keyword table first: keywords are not subject to the 8-char limit
+            if (keywords.find(lexeme) != keywords.end()) {
+                return {keywords[lexeme], lexeme, line, startCol, ""};
+            }
+
+            // Error check: ordinary identifier length exceeds 8 characters
             if (lexeme.length() > 8) {
                 return {TokenType::ERROR, lexeme, line, startCol, "Identifier length exceeds 8 characters"};
             }
 
-            // 查表看是否是关键字
-            if (keywords.find(lexeme) != keywords.end()) {
-                return {keywords[lexeme], lexeme, line, startCol, ""};
-            }
             return {TokenType::ID, lexeme, line, startCol, ""};
         }
 
@@ -106,6 +107,9 @@ Token Lexer::getNextToken() {
         if (c == '<' && peek(1) == '=') { advance(); advance(); return {TokenType::LE, "<=", line, startCol, ""}; }
         if (c == '>' && peek(1) == '=') { advance(); advance(); return {TokenType::GE, ">=", line, startCol, ""}; }
         if (c == '<' && peek(1) == '>') { advance(); advance(); return {TokenType::NEQ, "<>", line, startCol, ""}; }
+
+        // 5.1 识别 '#' 为不等于（PL/0 语法使用 #）
+        if (c == '#') { advance(); return {TokenType::NEQ, "#", line, startCol, ""}; }
 
         // 6. 识别单字符界符与运算符
         c = advance(); // 注意：这里才真正吃掉字符
