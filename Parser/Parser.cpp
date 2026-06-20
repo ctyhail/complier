@@ -33,6 +33,12 @@ void Parser::consumeSyncAndReset(const std::set<TokenType>& syncSet) {
     panicMode = false;
 }
 
+// 同步到同步符号但不消费，退出恐慌模式
+void Parser::syncAndReset(const std::set<TokenType>& syncSet) {
+    synchronize(syncSet);
+    panicMode = false;
+}
+
 bool Parser::expect(TokenType type, const std::string& errMsg) {
     if (check(type)) {
         advance();
@@ -53,6 +59,14 @@ void Parser::reportError(const std::string& msg) {
     if (!panicMode) {
         hasError = true;
         errors.push_back({current.line, msg});
+        panicMode = true;
+    }
+}
+
+void Parser::reportError(const std::string& msg, int line) {
+    if (!panicMode) {
+        hasError = true;
+        errors.push_back({line, msg});
         panicMode = true;
     }
 }
@@ -133,10 +147,11 @@ void Parser::procDecl() {
     advance(); // consume procedure
     if (!expect(TokenType::ID, "Expected procedure name")) {
         consumeSyncAndReset({TokenType::SEMI});
-        return;
-    }
-    if (!expect(TokenType::SEMI, "Expected ';' after procedure name")) {
-        consumeSyncAndReset({TokenType::SEMI});
+        // 首部出错后仍继续解析过程体，避免体内错误被漏报
+    } else {
+        if (!expect(TokenType::SEMI, "Expected ';' after procedure name")) {
+            consumeSyncAndReset({TokenType::SEMI});
+        }
     }
     block();
     if (!expect(TokenType::SEMI, "Expected ';' after procedure body")) {
@@ -164,23 +179,33 @@ void Parser::statement() {
             // <赋值语句> ::= <标识符>:=<表达式>
             advance();
             if (!expect(TokenType::ASSIGN, "Expected ':=' in assignment")) {
-                consumeSyncAndReset({TokenType::SEMI, TokenType::END});
-                return;
+                // 错误恢复：若误用 '=' 代替 ':='，报错后当作 ':=' 继续解析表达式
+                if (check(TokenType::EQ)) {
+                    advance();
+                    panicMode = false;
+                    expression();
+                } else {
+                    syncAndReset({TokenType::SEMI, TokenType::END});
+                    return;
+                }
+            } else {
+                expression();
             }
-            expression();
             break;
 
         case TokenType::IF: {
             // <条件语句> ::= if <条件> then <语句>
+            int ifLine = current.line;
             advance();
             condition();
             if (check(TokenType::BEGIN)) {
                 // 错误恢复：缺少 then，但下一个是 begin，继续解析语句体
-                reportError("Expected 'then' after condition");
+                reportError("Expected 'then' after condition", ifLine);
+                panicMode = false;
                 statement();
             } else {
                 if (!expect(TokenType::THEN, "Expected 'then' after condition")) {
-                    consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+                    syncAndReset({TokenType::SEMI, TokenType::END});
                     return;
                 }
                 statement();
@@ -190,15 +215,17 @@ void Parser::statement() {
 
         case TokenType::WHILE: {
             // <当型循环语句> ::= while <条件> do <语句>
+            int whileLine = current.line;
             advance();
             condition();
             if (check(TokenType::BEGIN)) {
                 // 错误恢复：缺少 do，但下一个是 begin，继续解析语句体
-                reportError("Expected 'do' after condition");
+                reportError("Expected 'do' after condition", whileLine);
+                panicMode = false;
                 statement();
             } else {
                 if (!expect(TokenType::DO, "Expected 'do' after condition")) {
-                    consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+                    syncAndReset({TokenType::SEMI, TokenType::END});
                     return;
                 }
                 statement();
@@ -210,7 +237,7 @@ void Parser::statement() {
             // <过程调用语句> ::= call <标识符>
             advance();
             if (!expect(TokenType::ID, "Expected procedure name after call")) {
-                consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+                syncAndReset({TokenType::SEMI, TokenType::END});
                 return;
             }
             break;
@@ -228,7 +255,7 @@ void Parser::statement() {
                 }
             }
             if (!expect(TokenType::END, "Expected 'end' after begin")) {
-                consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+                syncAndReset({TokenType::SEMI, TokenType::END});
             }
             break;
         }
@@ -237,22 +264,22 @@ void Parser::statement() {
             // <读语句> ::= read(<标识符>{,<标识符>})
             advance();
             if (!expect(TokenType::LPAREN, "Expected '(' after read")) {
-                consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+                syncAndReset({TokenType::SEMI, TokenType::END});
                 return;
             }
             if (!expect(TokenType::ID, "Expected identifier in read")) {
-                consumeSyncAndReset({TokenType::RPAREN, TokenType::SEMI, TokenType::END});
+                syncAndReset({TokenType::RPAREN, TokenType::SEMI, TokenType::END});
                 return;
             }
             while (check(TokenType::COMMA)) {
                 advance();
                 if (!expect(TokenType::ID, "Expected identifier after ',' in read")) {
-                    consumeSyncAndReset({TokenType::RPAREN, TokenType::SEMI, TokenType::END});
+                    syncAndReset({TokenType::RPAREN, TokenType::SEMI, TokenType::END});
                     return;
                 }
             }
             if (!expect(TokenType::RPAREN, "Expected ')' after read arguments")) {
-                consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+                syncAndReset({TokenType::SEMI, TokenType::END});
                 return;
             }
             break;
@@ -261,7 +288,7 @@ void Parser::statement() {
             // <写语句> ::= write(<表达式>{,<表达式>})
             advance();
             if (!expect(TokenType::LPAREN, "Expected '(' after write")) {
-                consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+                syncAndReset({TokenType::SEMI, TokenType::END});
                 return;
             }
             expression();
@@ -270,14 +297,14 @@ void Parser::statement() {
                 expression();
             }
             if (!expect(TokenType::RPAREN, "Expected ')' after write arguments")) {
-                consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+                syncAndReset({TokenType::SEMI, TokenType::END});
                 return;
             }
             break;
 
         default:
             reportError("Unexpected token at start of statement");
-            consumeSyncAndReset({TokenType::SEMI, TokenType::END});
+            syncAndReset({TokenType::SEMI, TokenType::END});
             break;
     }
 }
@@ -351,7 +378,8 @@ void Parser::factor() {
 
 bool Parser::parse() {
     program();
-    if (!check(TokenType::END_OF_FILE)) {
+    // 已有错误时不再报告末尾级联错误
+    if (!check(TokenType::END_OF_FILE) && !hasError) {
         reportError("Unexpected token after program end");
     }
     return !hasError;

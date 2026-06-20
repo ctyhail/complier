@@ -60,7 +60,7 @@ int main() {
         "        end\n"
         "end.\n";
 
-    // Test case 3: while missing do (reports line 18)
+    // Test case 3: while missing do (reports line 17)
     std::string test3 =
         "const a = 10;\n"
         "var   b, c;\n"
@@ -86,7 +86,7 @@ int main() {
         "        end\n"
         "end.\n";
 
-    // Test case 4: multiple syntax errors (reports lines 1,2,10,12,16,17,20,21)
+    // Test case 4: multiple syntax errors (reports lines 1,2,10,11,13,16,17,20)
     std::string test4 =
         "const a := 10;\n"
         "var   b, c d;\n"

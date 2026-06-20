@@ -30,8 +30,10 @@ private:
 
     // 错误处理
     void reportError(const std::string& msg);
+    void reportError(const std::string& msg, int line);
     void synchronize(const std::set<TokenType>& syncSet);
     void consumeSyncAndReset(const std::set<TokenType>& syncSet);
+    void syncAndReset(const std::set<TokenType>& syncSet);
 
     // 语法规则（与 PL/0 EBNF 对应）
     void program();
