@@ -11,12 +11,12 @@ Lexer::Lexer(const std::string& src) : source(src), cursor(0), line(1), column(1
     };
 }
 
-// 辅助函数实现
+// 辅助函数实现:安全地往前看字符
 char Lexer::peek(int offset) {
     if (cursor + offset >= source.length()) return '\0';
     return source[cursor + offset];
 }
-
+// 基础辅助函数：吃掉当前字符，并更新行号列号
 char Lexer::advance() {
     char c = source[cursor++];
     if (c == '\n') {
@@ -59,10 +59,12 @@ Token Lexer::getNextToken() {
             }
         }
 
-        // 3. Recognize identifiers or keywords
-        if (isalpha(c)) {
+        // 3. 识别标识符或关键字 (修复下划线支持)
+        // 标识符必须以字母或下划线开头
+        if (isalpha(c) || c == '_') {
             std::string lexeme;
-            while (isalnum(peek())) {
+            // 后续字符可以是字母、数字或下划线
+            while (isalnum(peek()) || peek() == '_') {
                 lexeme += advance();
             }
 

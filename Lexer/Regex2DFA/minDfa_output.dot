@@ -1,0 +1,15 @@
+digraph Automaton {
+  rankdir=LR;
+  node [shape = doublecircle]; "S3" ;
+  node [shape = circle];
+  secret_start [shape=point];
+  secret_start -> "S0";
+  "S0" -> "S1" [label="a"];
+  "S0" -> "S0" [label="b"];
+  "S1" -> "S1" [label="a"];
+  "S1" -> "S2" [label="b"];
+  "S2" -> "S1" [label="a"];
+  "S2" -> "S3" [label="b"];
+  "S3" -> "S1" [label="a"];
+  "S3" -> "S0" [label="b"];
+}
